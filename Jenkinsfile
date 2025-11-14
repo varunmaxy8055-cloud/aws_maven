@@ -8,16 +8,17 @@ pipeline {
             }
         }
 
-        stage('Deploy to Tomcat 11') {
+        stage('Deploy to Tomcat 9') {
             steps {
                 sh '''
-                WAR_FILE=$(ls target/*.war | head -n 1)
+                WAR_FILE=target/mywebapp.war
 
-                curl -u admin:admin -X POST \
-                  -F "deploy=@$WAR_FILE" \
-                  "http://15.206.164.116:8081/manager/text/deploy?path=/mywebapp&update=true"
+                curl -u admin:admin "http://15.206.164.116:8081/manager/text/undeploy?path=/mywebapp"
+
+                curl -u admin:admin -T $WAR_FILE "http://15.206.164.116:8081/manager/text/deploy?path=/mywebapp&update=true"
                 '''
             }
         }
     }
 }
+15.206.164.116
