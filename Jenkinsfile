@@ -14,8 +14,8 @@ pipeline {
                 WAR_FILE=$(ls target/*.war | head -n 1)
 
                 curl -u admin:admin -X POST \
-                    -F "deploy=@$WAR_FILE" \
-                    "http://15.206.164.116:8081/manager/deploy?path=/mywebapp&update=true"
+                  -F "deploy=@$WAR_FILE" \
+                  "http://15.206.164.116:8081/manager/text/deploy?path=/mywebapp&update=true"
                 '''
             }
         }
