@@ -10,19 +10,19 @@ pipeline {
 
         stage('Build') {
             steps {
-                echo 'Building... from gGitHub change'
+                sh 'mvn clean package'
             }
         }
 
         stage('Test') {
             steps {
-                echo 'Testing...'
+                echo 'Testing (no real tests yet)...'
             }
         }
 
         stage('Deploy') {
             steps {
-                echo 'Deploying...'
+                echo 'Deploy stage placeholder (Tomcat later)'
             }
         }
     }
