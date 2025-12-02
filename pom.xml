@@ -20,14 +20,14 @@
 
     <build>
         <plugins>
-            <!-- Newer WAR plugin that works with Java 17 -->
+            <!-- WAR plugin that works with Java 17 -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
                 <version>3.3.2</version>
             </plugin>
 
-            <!-- Explicit compiler plugin -->
+            <!-- Compiler plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
